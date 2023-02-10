@@ -1,0 +1,143 @@
+# 2023-02-09
+
+1. Install the bitmap fonts for vt
+2. Note the differences of the Newcorn and the Syscorn
+3. The CJK font for vt to use.
+4. Bdf fonts convert to fnt.
+5. Hex fonts for vt.
+
+6. The way to search the problems:
+		Arch wiki, Gentoo wiki, FreeBSD wiki, FreeBSD Handbook.
+7. nvim to set the tabstop using the lua.
+8. Lua to define the neovim.
+9. Github to save the config
+10. Hyprland compositor config:
+11. The comments is start with "#"
+
+12. apps :
+		fuzzel:
+		Fuzzel is an application launcher for wlroots based Wayland compositors, similar to rofi’s drun mode. Codeberg
+
+13. Text to ascii.(Use in the command line)
+
+
+14. Reinstall the fcitx5 and the notice is:
+
+```bash
+		Message from fcitx5-5.0.11_2:
+
+--
+Remember to set the environment variable XMODIFIERS:
+
+	csh/tcsh:	setenv XMODIFIERS @im=fcitx
+	sh/bash:	export XMODIFIERS='@im=fcitx'
+
+For GTK+ programs, you may want to set:
+
+	csh/tcsh:	setenv GTK_IM_MODULE fcitx/xim
+	sh/bash:	export GTK_IM_MODULE=fcitx/xim
+
+For Qt programs, you may want to set:
+
+	csh/tcsh:	setenv QT_IM_MODULE fcitx
+	sh/bash:	export QT_IM_MODULE=fcitx
+
+To start fcitx with your desktop, just
+
+	cp /usr/local/share/applications/org.fcitx.Fcitx5.desktop \
+	    ~/.config/autostart/
+
+```
+
+15. fcitx5-configtool install notice
+
+```bash
+
+====
+Message from xmlcatmgr-2.2_3:
+
+--
+The following catalogs are installed:
+
+ 1) /usr/local/share/sgml/catalog
+
+   The top level catalog for SGML stuff.  It is not changed
+   by any ports/packages except textproc/xmlcatmgr.
+
+ 2) /usr/local/share/sgml/catalog.ports
+
+   This catalog is for handling SGML stuff installed under
+   /usr/local/share/sgml.  It is changed by ports/packages.
+
+ 3) /usr/local/share/xml/catalog
+
+   The top level catalog for XML stuff.  It is not changed
+   by any ports/packages except textproc/xmlcatmgr.
+
+ 4) /usr/local/share/xml/catalog.ports
+
+   This catalog is for handling XML stuff installed under
+   /usr/local/share/xml.  It is changed by ports/packages.
+=====
+Message from iso8879-1986_3:
+
+--
+===>   NOTICE:
+
+The iso8879 port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+=====
+Message from phonon-qt5-4.11.1:
+
+--
+Please, consider installing backends for Phonon:
+- multimedia/phonon-gstreamer	GStreamer backend
+- multimedia/phonon-vlc		VLC backend
+=====
+Message from kf5-solid-5.102.0:
+
+--
+Solid has UDisks2 backend turned on by default. If you want to use it, install
+sysutils/bsdisks package and **disable** hald (set hald_enable="NO" in rc.conf or
+just remove the package). If you want to stay with hald, don't install bsdisks, as
+you'll get duplicated entries for removable disks.
+
+```
+
+15. Change the theme of the fcitx5(Using the configtool):
+- Clone the themes on the github.
+- Copy the themes to the `$XDG_DATA_HOME/fcitx5/themes`, the default one is `$HOME/.local/share/fcitx5/themes`
+- Open the Fcitx5 configtool -> Addons -> UI(Classic User interface) -> Theme (change and apply)
+
+ 
+16. Change the theme of the fcitx5 (Manually:`$XDG_CONFIG_HOME/fcitx5/conf/classicui.conf`, the default one is `/$HOME/.config/fcitx5/conf/classicui.conf`)
+
+```bash
+# The classicui.conf should have the follow contents
+# 垂直候选列表
+Vertical Candidate List=False
+# 按屏幕 DPI 使用
+PerScreenDPI=True
+# 使用鼠标滚轮翻页
+WheelForPaging=True
+# 字体
+Font="Sans 10"
+# 菜单字体
+MenuFont="Sans 10"
+# 使用输入法的语言来显示文字
+UseInputMethodLangaugeToDisplayText=True
+# 主题
+Theme=Material-Color-Pink
+
+```
+
+
+
+
